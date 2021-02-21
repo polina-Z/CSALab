@@ -1,10 +1,10 @@
 #include <iostream>
 
 /* Изменяйте только эти 4 переменные */
-constexpr int V0 = 0;
-constexpr int V1 = -1;
-constexpr int V2 = 0;
-constexpr int V3 = 0;
+constexpr int V0 = 9;
+constexpr int V1 = 9;
+constexpr int V2 = -12;
+constexpr int V3 = 9;
 
 /*
  * Точка входа с++ программы. Что передается через аргументы?
