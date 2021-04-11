@@ -20,7 +20,7 @@ public:
     void ProcessInstruction()
     {
         Word received_instr = _mem.Request(_ip);
-        InstructionPtr instr = _decoder.Decode(rawInstr);
+        InstructionPtr instr = _decoder.Decode(received_instr);
         _rf.Read(instr);
         _csrf.Read(instr);
         _exe.Execute(instr, _ip);
