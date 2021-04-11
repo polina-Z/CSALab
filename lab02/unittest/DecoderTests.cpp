@@ -222,7 +222,16 @@ TEST_SUITE("Decoder"){
         }
     }
 
-    /* YOUR CODE HERE */
+    TEST_CASE("Option 10"){
+        SUBCASE("Load Word"){
+            auto instruction = _decoder.Decode(0b000000001010'01000'010'10101'0000011);
+            CHECK(instruction->_imm.value() == 10);
+            CHECK(instruction->_src1.value() == 8);
+            CHECK(instruction->_dst.value() == 21);
+            CHECK(instruction->_type == IType::Ld);
+            CHECK(instruction->_aluFunc == AluFunc::Add);
+        }
+    }
 }
 
 void testBranch(InstructionPtr &instruction){

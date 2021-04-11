@@ -236,7 +236,16 @@ TEST_SUITE("Executor"){
 
         }
     }
-    /* YOUR CODE HERE */
+
+    TEST_CASE("Option 10"){
+        SUBCASE("Load Word"){
+            auto instruction = _decoder.Decode(0b000000001010'01000'010'10101'0000011);
+            instruction->_src1Val = 32;
+            _exe.Execute(instruction, IP);
+            CHECK_EQ(instruction->_nextIp, IP + 4);
+            CHECK_EQ(instruction->_addr, instruction->_src1Val + instruction->_imm.value());
+        }
+    }
 }
 
 void testAlu(InstructionPtr &instruction, Executor &exe){
